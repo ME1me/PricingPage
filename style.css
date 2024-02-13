@@ -1,0 +1,221 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  html {
+    font-size: 15px;
+  }
+  body {
+    background: #000000;
+    font-family: "Montserrat", sans-serif;
+    width: 80%;
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+  }
+  header {
+    color: hsl(228, 100%, 99%);
+    margin: 3.3rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .toggle {
+    margin-top: 2rem;
+    color: hsl(0, 14%, 74%);
+    display: flex;
+    align-items: center;
+  }
+  .toggle-btn {
+    margin: 0 1rem;
+    
+  }
+  .checkbox {
+    display: none;
+    color: #ff0000;
+  }
+  
+  .sub {
+    background: linear-gradient(
+      135deg,
+      rgba(163, 168, 240, 1) 0%,
+      rgba(105, 111, 221, 1) 100%
+    );
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    /* height: 25px;
+    width: 50px; */
+    height: 1.6rem;
+    width: 3.3rem;
+    border-radius: 1.6rem;
+    padding: 0.3rem;
+  }
+  .circle {
+    background-color: #fff;
+    height: 1.4rem;
+    width: 1.4rem;
+    border-radius: 50%;
+  }
+  .checkbox:checked + .sub {
+    justify-content: flex-end;
+  }
+  .container {
+    margin: 0 auto;
+    width: 90%;
+    max-width: 1200px;
+  }
+  .group:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .grid-1-5 {
+    border: 2px solid #5d4e65;   
+    min-height: 400px;
+    padding: 1.25em;
+    position: relative;
+    text-align: center;
+    transition: all .2s ease-in-out;
+    
+    @media screen and (min-width: 700px) {
+      & {
+        float: left;
+        width: 50%;
+      }
+      &:nth-child(odd) {
+        clear: left;
+      }
+    }
+    
+    @media screen and (min-width: 800px) {
+      & {      
+        width: 33.3333333%;
+      }
+      &:nth-child(3n+1) {
+        clear: left;
+      }
+      &:nth-child(odd) {
+        clear: none;
+      }    
+    }
+    
+    @media screen and (min-width: 1120px) {
+      & {
+         width: 20%;
+      }
+      &:nth-child(odd), &:nth-child(3n+1) {
+         clear: none;
+      }    
+    }
+    
+  }
+  .grid-1-5:hover {
+    background-color: rgb(52, 48, 54);
+    @include filter-gradient(#53455b, #201d22, vertical);
+    @include background-image(linear-gradient(top,  rgba(83,69,91,1) 0%,rgba(32,29,34,1) 100%));  
+    border-top: 2px solid #ff0000;
+    border-bottom: 2px solid #ff0026;
+    box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 1);
+    transform: scale(1.025);
+    z-index: 2;
+  
+    &:before, &:after {
+      content: ""; 
+      position: absolute; 
+      background-color: rgb(255, 0, 0);
+      @include filter-gradient(#f67d35, #ff4f68, vertical);
+      @include background-image(linear-gradient(top,  rgba(246,125,53,1) 0%,rgba(255,79,104,1) 100%));
+      top: -2px; 
+      bottom: -2px; 
+      width: 2px;    
+    }
+  
+    &:before { 
+      left: -2px; 
+    }
+    &:after { 
+      right: -2px; 
+    }  
+  
+    & .button {
+      background-color: rgb(255, 0, 0);
+      @include filter-gradient(#ee7a36, #eb495d, horizontal);
+      @include background-image(linear-gradient(left,  rgba(238,122,54,1) 0%,rgba(235,73,93,1) 100%));    
+    }
+  }
+.navbar {
+  background-color: #ff0000; 
+  padding: 20px;
+  text-align: center;
+  color: #fff; 
+  font-family: 'Montserrat', sans-serif;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar h1 {
+  margin: 0;
+  font-size: 24px; 
+}
+
+
+  
+  h2, h3, p, ul {
+    margin: 0;
+    color: #ffffff;
+  }
+  h2 {
+    font-size: 1em;
+    font-weight: 400;
+    margin: 0 0 0.5em;
+    
+  }
+  h3 {
+    font-size: 1.5em;
+    letter-spacing: 0.0625em;
+    margin: 0 0 0.3333333333333333em;
+  }
+  p {
+    font-size: 0.875em;  
+  }
+  p, ul {
+    margin:0 0 1.5em
+  }
+  ul {
+    color: #796583;
+    font-size: 0.75em;
+    list-style-type: none;
+    padding: 0;
+  
+    li {
+      margin: 0 0 0.8333333333333333em;
+    }
+  }
+  .button {
+    background-color: #9c83aa;
+    border-radius: 20px;
+    color: #fff;
+    font-size: 1em;
+    font-weight: 700;
+    padding: 0.75em 1.5em;
+    position: absolute;
+    bottom: 1.25em;
+    left: 50%;
+    margin-left: -60px;
+    text-decoration: none;
+    width: 120px;
+  }
+  .uppercase, .button, h2 {
+    text-transform: uppercase;
+  }
+  sup, .small {
+    font-size: 0.6125em;
+  }
+  #currencyDropdown{
+    margin-top: 22px;
+  }
